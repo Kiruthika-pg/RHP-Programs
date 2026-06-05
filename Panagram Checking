@@ -1,0 +1,32 @@
+package RHP;
+
+import java.util.Scanner;
+
+public class bitwise {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+
+        long flag = 0;
+
+        for(char ch : s.toCharArray()) {
+
+            if(ch >= 'a' && ch <= 'z') {
+                flag |= (1L << (ch - 'a'));
+            }
+            else if(ch >= 'A' && ch <= 'Z') {
+                flag |= (1L << (26 + ch - 'A'));
+            }
+        }
+
+        long allBits = (1L << 52) - 1;
+
+        if(flag==allBits) {
+        	System.out.println("Yes");
+        }
+        else {
+        	System.out.println("No");
+        }
+    }
+}
