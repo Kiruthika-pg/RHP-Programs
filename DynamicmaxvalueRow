@@ -1,0 +1,43 @@
+package RHP;
+
+import java.util.Scanner;
+
+public class DynamicmaxvalueRow {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		int[][] matrix = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        int [][] result=new int[3][3];
+        for(int i=0;i<3;i++) {
+        	result[0][i]=matrix[0][i];
+        }
+        for(int i=1;i<3;i++) {
+        	for(int j=0;j<3;j++) {
+        		int max=Integer.MIN_VALUE;
+        		for(int k=0;k<3;k++) {
+        			if(j!=k) {
+        				max=Math.max(max, result[i-1][k]);
+        			}
+        		}
+        		result[i][j]=matrix[i][j]+max;
+        	}
+        }
+        System.out.println("Result Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                System.out.println(result[i][j]);
+            }
+        }
+        int total=Integer.MIN_VALUE;
+        for(int i=0;i<3;i++) {
+        	total=Math.max(total, result[2][i]);
+        }
+        System.out.println("Maximum:"+total);
+	}
+
+}
