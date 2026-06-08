@@ -12,13 +12,11 @@ public class Main {
 
             char ch = str.charAt(i);
 
-            if (ch >= 'a' && ch <= 'z') {
-                flag |= (1 << (ch - 'a'));
+            if (ch >= 'A' && ch <= 'Z') {
+                flag |= (1 << (ch - 'A'));
             }
         }
 
-        System.out.println(
-            (flag == (1 << 26) - 1) ? "Yes" : "No"
-        );
+        System.out.println(flag);
     }
 }
