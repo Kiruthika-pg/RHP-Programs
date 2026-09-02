@@ -1,0 +1,28 @@
+package RHP;
+import java.util.*;
+public class DLazyFaith {
+	public static void main(String args[]) {
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	int m=sc.nextInt();
+	int q=sc.nextInt();
+	int sh[]=new int[n];
+	int te[]=new int[m];
+	
+	for(int i=0;i<n;i++) {
+		sh[i]=sc.nextInt();
+	}
+	for(int i=0;i<m;i++) {
+		te[i]=sc.nextInt();
+	}
+	Arrays.sort(sh);
+	Arrays.sort(te);
+	while(q>=0) {
+		int pt=sc.nextInt();
+		int lt = Arrays.binarySearch(sh,pt);
+        if (lt < 0)
+            lt = -(lt)-1;
+        
+	}}
+
+}
