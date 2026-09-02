@@ -1,0 +1,33 @@
+package RHP;
+import java.util.*;
+public class OnADiet {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner (System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int d=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		int sum=0;
+		
+		for(int i=0;i<n;i++) {
+			if (i >= m) {
+                sum -= arr[i - m];
+            }
+			if(arr[i]+sum<=d) {
+				System.out.println("yes");
+				sum+=arr[i];
+			}
+			else {
+				System.out.println("no");
+				arr[i]=0;
+			}
+			
+		
+		
+		}
+	}
+
+}
